@@ -44,16 +44,19 @@
             box-sizing: border-box;
         }
 
+        .logo-info-container {
+            text-align: center;
+        }
+
         .logo {
             width: 150px;
             max-width: 100%;
         }
 
         .info {
+            font-size: 1em;
             text-transform: uppercase;
-            font-size: 1.5em;
             line-height: 1.1;
-            margin: 2em 0;
             text-align: center;
             background: #008BE1;
             background: linear-gradient(30deg, #008BE1, #00E0B2);
@@ -61,6 +64,88 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 0;
+            margin-top: .5em;
+        }
+
+        .actions-container {
+            margin: 3em 0;
+        }
+
+        .action-button {
+            display: block;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+            font-size: .75em;
+            font-weight: bold;
+            background: linear-gradient(30deg, rgb(0, 139, 225), rgb(0, 224, 178));
+            line-height: 1;
+            color: inherit;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            padding: 1em 2em;
+            border-radius: .3em;
+        }
+
+        .action-button--secondary {
+            position: relative;
+            z-index: 1;
+        }
+
+        .action-button--secondary:before {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(30deg, rgb(0, 139, 225), rgb(0, 224, 178));
+            border-radius: inherit;
+        }
+
+        .action-button--secondary:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #182239;
+            background-clip: padding-box;
+            border-radius: inherit;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+        }
+
+        .action-button--secondary span {
+            background: linear-gradient(30deg, rgb(0, 139, 225), rgb(0, 224, 178));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .action-button--secondary:hover span {
+            background-image: linear-gradient(30deg, rgb(0, 107, 174), rgb(0, 173, 137));
+        }
+
+
+        .action-button:focus {
+            outline: 2px solid #008BE1;
+        }
+
+        .action-button:hover,
+        .action-button:hover:before {
+            background-image: linear-gradient(30deg, rgb(0, 107, 174), rgb(0, 173, 137));
+        }
+
+        .action-button+.action-button {
+            margin-top: 1em;
         }
 
         .social-list {
@@ -112,6 +197,17 @@
                 width: 250px;
             }
 
+            .action-button {
+                font-size: 1em;
+                display: inline-block;
+                width: auto;
+            }
+
+            .action-button+.action-button {
+                margin-top: 0;
+                margin-left: 1em;
+            }
+
             .social-item {
                 display: inline-block;
                 margin-right: 3em;
@@ -131,9 +227,19 @@
 
 <body>
     <div class="container">
-        <img class="logo animate__animated animate__fadeInDown" src="/logo.png" alt="SafeOTC logo">
+        <div class="logo-info-container animate__animated animate__fadeInDown">
+            <img class="logo" src="/logo.png" alt="SafeOTC logo">
 
-        <p class="info animate__animated animate__fadeInLeft animate__delay-1s">Coming soon</p>
+            <p class="info">coming soon</p>
+        </div>
+
+        <div class="actions-container animate__animated animate__fadeInLeft animate__delay-1s">
+            <a class="action-button"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdWt8rIvbwH6jtkAetcztO48Lsu01cFVL06DmOxyXg8H3Zpiw/viewform"
+                target="_blank">Invest</a>
+            <a class="action-button action-button--secondary" href="https://docs.safeotc.io"
+                target="_blank"><span>Docs</span></a>
+        </div>
 
         <ul class="social-list animate__animated animate__fadeInRight animate__delay-1s">
             <li class="social-item"><a href="https://twitter.com/Safe_OTC" target="_blank" class="link"><svg id="Capa_1"
