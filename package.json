@@ -1,0 +1,15 @@
+{
+    "name": "safeotc-landing-page",
+    "version": "0.1.0",
+    "description": "SafeOTC - first decentralized OTC platform",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "http-server": "^14.0.0"
+    }
+}
